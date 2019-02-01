@@ -5,6 +5,7 @@ public class GreetingServiceFactory {
     private GreetingRepository greetingRepository;
 
     public GreetingServiceFactory(GreetingRepository greetingRepository) {
+        System.out.println("initializing GreetingServiceFactory");
         this.greetingRepository = greetingRepository;
     }
 
@@ -12,6 +13,7 @@ public class GreetingServiceFactory {
 
         switch (lang){
             case "zh":
+                System.out.println("Returning ChineseGreetingService");
                 return new ChineseGreetingService(this.greetingRepository);
             case "jp":
                 return new JapaneseGreetingService(this.greetingRepository);

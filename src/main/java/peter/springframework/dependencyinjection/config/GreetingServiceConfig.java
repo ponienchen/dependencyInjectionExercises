@@ -13,12 +13,13 @@ public class GreetingServiceConfig {
 
     @Bean
     GreetingServiceFactory greetingServiceFactory(GreetingRepository repository){
+        System.out.println("initializing GreetingServiceFactory");
         return new GreetingServiceFactory(repository);
     }
 
     // Spring will auto-wire the above Bean "GreetingServiceFactory" into the argument variable
     @Bean
-    // @Primary
+    @Primary
     @Profile({"default", "zh"})
     GreetingService chineseGreetingService(GreetingServiceFactory greetingServiceFactory){
         return greetingServiceFactory.createGreetingService("zh");

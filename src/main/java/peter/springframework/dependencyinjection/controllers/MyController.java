@@ -16,6 +16,7 @@ public class MyController {
 
     @Autowired
     public MyController(GreetingService greetingService) {
+        System.out.println("Initializing MyController");
         this.greetingService = greetingService;
     }
 

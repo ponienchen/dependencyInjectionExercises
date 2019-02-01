@@ -4,6 +4,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GreetingRepositoryImpl implements GreetingRepository {
+
+    public GreetingRepositoryImpl() {
+        System.out.println("initializing GreetingRepositoryImpl");
+    }
+
     @Override
     public String getChineseGreeting() {
         return "早上好!";
