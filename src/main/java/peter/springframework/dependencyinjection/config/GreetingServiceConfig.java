@@ -13,7 +13,7 @@ public class GreetingServiceConfig {
 
     @Bean
     GreetingServiceFactory greetingServiceFactory(GreetingRepository repository){
-        System.out.println("initializing GreetingServiceFactory");
+        System.out.println("about to initialize GreetingServiceFactory");
         return new GreetingServiceFactory(repository);
     }
 
